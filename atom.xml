@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Fragments]]></title>
-  <link href="http://greenhalolabs.github.io/atom.xml" rel="self"/>
-  <link href="http://greenhalolabs.github.io/"/>
-  <updated>2014-03-19T22:36:46-07:00</updated>
-  <id>http://greenhalolabs.github.io/</id>
+  <link href="http://fragments.greenhalolabs.io/atom.xml" rel="self"/>
+  <link href="http://fragments.greenhalolabs.io/"/>
+  <updated>2014-03-19T22:41:29-07:00</updated>
+  <id>http://fragments.greenhalolabs.io/</id>
   <author>
     <name><![CDATA[Green Halo Labs]]></name>
     

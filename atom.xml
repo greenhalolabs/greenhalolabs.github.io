@@ -4,7 +4,7 @@
   <title><![CDATA[Fragments]]></title>
   <link href="http://fragments.greenhalolabs.io/atom.xml" rel="self"/>
   <link href="http://fragments.greenhalolabs.io/"/>
-  <updated>2014-03-19T22:51:43-07:00</updated>
+  <updated>2014-03-19T23:01:30-07:00</updated>
   <id>http://fragments.greenhalolabs.io/</id>
   <author>
     <name><![CDATA[Green Halo Labs]]></name>
@@ -14,11 +14,11 @@
 
   
   <entry>
-    <title type="html"><![CDATA[AutoNextTextWatcher]]></title>
+    <title type="html"><![CDATA[Code Snippet: AutoNextTextWatcher]]></title>
     <link href="http://fragments.greenhalolabs.io/blog/2014/03/18/autonexttextwatcher/"/>
     <updated>2014-03-18T23:01:05-07:00</updated>
     <id>http://fragments.greenhalolabs.io/blog/2014/03/18/autonexttextwatcher</id>
-    <content type="html"><![CDATA[<p>A useful <code>TextWatcher</code> for going to the next view once a certain length has been reached.</p>
+    <content type="html"><![CDATA[<p>A useful <code>TextWatcher</code> for auto-focusing to the next view once a certain character length has been reached on an <code>EditText</code>.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>

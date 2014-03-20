@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: TextWatcher | Fragments]]></title>
-  <link href="http://fragments.greenhalolabs.io/blog/categories/textwatcher/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Code Snippet | Fragments]]></title>
+  <link href="http://fragments.greenhalolabs.io/blog/categories/code-snippet/atom.xml" rel="self"/>
   <link href="http://fragments.greenhalolabs.io/"/>
   <updated>2014-03-19T23:01:30-07:00</updated>
   <id>http://fragments.greenhalolabs.io/</id>

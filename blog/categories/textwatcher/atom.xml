@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Textwatcher | Fragments]]></title>
+  <link href="http://fragments.greenhalolabs.io/blog/categories/textwatcher/atom.xml" rel="self"/>
+  <link href="http://fragments.greenhalolabs.io/"/>
+  <updated>2014-03-19T22:47:26-07:00</updated>
+  <id>http://fragments.greenhalolabs.io/</id>
+  <author>
+    <name><![CDATA[Green Halo Labs]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[AutoNextTextWatcher]]></title>
+    <link href="http://fragments.greenhalolabs.io/blog/2014/03/18/autonexttextwatcher/"/>
+    <updated>2014-03-18T23:01:05-07:00</updated>
+    <id>http://fragments.greenhalolabs.io/blog/2014/03/18/autonexttextwatcher</id>
+    <content type="html"><![CDATA[<p>A useful <code>TextWatcher</code> for going to the next view once a certain length has been reached.</p>
+
+<p>```
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
+import android.widget.EditText;</p>
+
+<p>/<em>*
+ * Created by chris on 3/13/14.
+ </em>/
+public class AutoNextTextWatcher implements TextWatcher {</p>
+
+<pre><code>private EditText mEditText;
+private int mMaxLength;
+
+public AutoNextTextWatcher(EditText editText, int maxLength) {
+    mEditText = editText;
+    mMaxLength = maxLength;
+    editText.addTextChangedListener(this);
+}
+
+@Override
+public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+}
+
+@Override
+public void onTextChanged(CharSequence s, int start, int before, int count) {
+    if (mEditText.getText().length() &gt;= mMaxLength) {
+        final View nextView = mEditText.focusSearch(View.FOCUS_DOWN);
+        if (nextView != null) {
+            nextView.requestFocus();
+        }
+    }
+}
+
+@Override
+public void afterTextChanged(Editable s) {
+}
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+
+<p><a href="https://gist.github.com/arriolac/9636241">https://gist.github.com/arriolac/9636241</a></p>
+]]></content>
+  </entry>
+  
+</feed>

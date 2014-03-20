@@ -1,12 +1,13 @@
 ---
 layout: post
-title: "AutoNextTextWatcher"
+title: "Code Snippet: AutoNextTextWatcher"
 date: 2014-03-18 23:01:05 -0700
 comments: true
-categories: textwatcher
+categories: [TextWatcher, Code Snippet]
+author: Chris Arriola
 ---
 
-A useful `TextWatcher` for going to the next view once a certain length has been reached.
+A useful `TextWatcher` for auto-focusing to the next view once a certain character length has been reached on an `EditText`.
 
 ```
 import android.text.Editable;

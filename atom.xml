@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Fragments]]></title>
+  <link href="http://greenhalolabs.github.io/atom.xml" rel="self"/>
+  <link href="http://greenhalolabs.github.io/"/>
+  <updated>2014-03-19T22:36:46-07:00</updated>
+  <id>http://greenhalolabs.github.io/</id>
+  <author>
+    <name><![CDATA[Green Halo Labs]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>

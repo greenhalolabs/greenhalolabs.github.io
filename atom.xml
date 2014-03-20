@@ -4,7 +4,7 @@
   <title><![CDATA[Fragments]]></title>
   <link href="http://greenhalolabs.github.io/atom.xml" rel="self"/>
   <link href="http://greenhalolabs.github.io/"/>
-  <updated>2014-03-18T23:08:28-07:00</updated>
+  <updated>2014-03-19T22:34:59-07:00</updated>
   <id>http://greenhalolabs.github.io/</id>
   <author>
     <name><![CDATA[Green Halo Labs]]></name>
@@ -12,93 +12,5 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[AutoNextTextWatcher]]></title>
-    <link href="http://greenhalolabs.github.io/blog/2014/03/18/autonexttextwatcher/"/>
-    <updated>2014-03-18T23:01:05-07:00</updated>
-    <id>http://greenhalolabs.github.io/blog/2014/03/18/autonexttextwatcher</id>
-    <content type="html"><![CDATA[<p>A useful <code>TextWatcher</code> for going to the next view once a certain length has been reached.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>import android.text.Editable;
-</span><span class='line'>import android.text.TextWatcher;
-</span><span class='line'>import android.view.View;
-</span><span class='line'>import android.widget.EditText;
-</span><span class='line'> 
-</span><span class='line'>/**
-</span><span class='line'> * Created by chris on 3/13/14.
-</span><span class='line'> */
-</span><span class='line'>public class AutoNextTextWatcher implements TextWatcher {
-</span><span class='line'> 
-</span><span class='line'>    private EditText mEditText;
-</span><span class='line'>    private int mMaxLength;
-</span><span class='line'> 
-</span><span class='line'>    public AutoNextTextWatcher(EditText editText, int maxLength) {
-</span><span class='line'>        mEditText = editText;
-</span><span class='line'>        mMaxLength = maxLength;
-</span><span class='line'>        editText.addTextChangedListener(this);
-</span><span class='line'>    }
-</span><span class='line'> 
-</span><span class='line'>    @Override
-</span><span class='line'>    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-</span><span class='line'>    }
-</span><span class='line'> 
-</span><span class='line'>    @Override
-</span><span class='line'>    public void onTextChanged(CharSequence s, int start, int before, int count) {
-</span><span class='line'>        if (mEditText.getText().length() &gt;= mMaxLength) {
-</span><span class='line'>            final View nextView = mEditText.focusSearch(View.FOCUS_DOWN);
-</span><span class='line'>            if (nextView != null) {
-</span><span class='line'>                nextView.requestFocus();
-</span><span class='line'>            }
-</span><span class='line'>        }
-</span><span class='line'>    }
-</span><span class='line'> 
-</span><span class='line'>    @Override
-</span><span class='line'>    public void afterTextChanged(Editable s) {
-</span><span class='line'>    }
-</span><span class='line'>}
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><a href="https://gist.github.com/arriolac/9636241">https://gist.github.com/arriolac/9636241</a></p>
-]]></content>
-  </entry>
   
 </feed>

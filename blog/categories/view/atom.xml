@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: View, | Fragments]]></title>
+  <link href="http://fragments.greenhalolabs.io/blog/categories/view/atom.xml" rel="self"/>
+  <link href="http://fragments.greenhalolabs.io/"/>
+  <updated>2014-03-26T11:17:57-07:00</updated>
+  <id>http://fragments.greenhalolabs.io/</id>
+  <author>
+    <name><![CDATA[Green Halo Labs]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[AlphaImageButton]]></title>
+    <link href="http://fragments.greenhalolabs.io/blog/2014/03/26/alphaimagebutton/"/>
+    <updated>2014-03-26T10:50:47-07:00</updated>
+    <id>http://fragments.greenhalolabs.io/blog/2014/03/26/alphaimagebutton</id>
+    <content type="html"><![CDATA[<p>Showing different view states (pressed, focused, disabled, etc.) can be a bit cumbersome and tedious when styling views. As a way to reduce the number of states to customize, we created a subclass of a View (an <code>ImageButton</code> in this case but can be any other View subclass) that sets the alpha value depending on the enabled state &ndash; 1.0 if enabled, 0.5 if disabled. This way, the View is translucent when disabled and a custom drawable/asset is not required.</p>
+
+<p>```
+import android.content.Context;
+import android.util.AttributeSet;
+import android.widget.ImageButton;</p>
+
+<p>public class AlphaImageButton extends ImageButton {</p>
+
+<pre><code>private static final float ENABLED_ALPHA = 1.0f;
+private static final float DISABLED_ALPHA = 0.5f;
+
+public ImageButtonPlus(Context context) {
+    super(context);
+}
+
+public ImageButtonPlus(Context context, AttributeSet attrs) {
+    super(context, attrs);
+}
+
+public ImageButtonPlus(Context context, AttributeSet attrs, int defStyle) {
+    super(context, attrs, defStyle);
+}
+
+@Override
+public void setEnabled(boolean enabled) {
+    super.setEnabled(enabled);
+    setAlpha((enabled ? ENABLED_ALPHA : DISABLED_ALPHA));
+}
+</code></pre>
+
+<p>}
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -4,7 +4,7 @@
   <title><![CDATA[Fragments]]></title>
   <link href="http://fragments.greenhalolabs.io/atom.xml" rel="self"/>
   <link href="http://fragments.greenhalolabs.io/"/>
-  <updated>2014-03-26T10:36:32-07:00</updated>
+  <updated>2014-03-26T11:17:57-07:00</updated>
   <id>http://fragments.greenhalolabs.io/</id>
   <author>
     <name><![CDATA[Green Halo Labs]]></name>
@@ -12,6 +12,71 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[AlphaImageButton]]></title>
+    <link href="http://fragments.greenhalolabs.io/blog/2014/03/26/alphaimagebutton/"/>
+    <updated>2014-03-26T10:50:47-07:00</updated>
+    <id>http://fragments.greenhalolabs.io/blog/2014/03/26/alphaimagebutton</id>
+    <content type="html"><![CDATA[<p>Showing different view states (pressed, focused, disabled, etc.) can be a bit cumbersome and tedious when styling views. As a way to reduce the number of states to customize, we created a subclass of a View (an <code>ImageButton</code> in this case but can be any other View subclass) that sets the alpha value depending on the enabled state &ndash; 1.0 if enabled, 0.5 if disabled. This way, the View is translucent when disabled and a custom drawable/asset is not required.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>import android.content.Context;
+</span><span class='line'>import android.util.AttributeSet;
+</span><span class='line'>import android.widget.ImageButton;
+</span><span class='line'>
+</span><span class='line'>public class AlphaImageButton extends ImageButton {
+</span><span class='line'>
+</span><span class='line'>    private static final float ENABLED_ALPHA = 1.0f;
+</span><span class='line'>    private static final float DISABLED_ALPHA = 0.5f;
+</span><span class='line'>
+</span><span class='line'>    public ImageButtonPlus(Context context) {
+</span><span class='line'>        super(context);
+</span><span class='line'>    }
+</span><span class='line'>
+</span><span class='line'>    public ImageButtonPlus(Context context, AttributeSet attrs) {
+</span><span class='line'>        super(context, attrs);
+</span><span class='line'>    }
+</span><span class='line'>
+</span><span class='line'>    public ImageButtonPlus(Context context, AttributeSet attrs, int defStyle) {
+</span><span class='line'>        super(context, attrs, defStyle);
+</span><span class='line'>    }
+</span><span class='line'>
+</span><span class='line'>    @Override
+</span><span class='line'>    public void setEnabled(boolean enabled) {
+</span><span class='line'>        super.setEnabled(enabled);
+</span><span class='line'>        setAlpha((enabled ? ENABLED_ALPHA : DISABLED_ALPHA));
+</span><span class='line'>    }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Code Snippet: AutoNextTextWatcher]]></title>

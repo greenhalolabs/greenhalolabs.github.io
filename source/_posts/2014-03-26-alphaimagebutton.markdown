@@ -3,7 +3,7 @@ layout: post
 title: "AlphaImageButton"
 date: 2014-03-26 10:50:47 -0700
 comments: true
-categories: View, Code Snippet
+categories: [Code Snippet, View]
 author: Chris Arriola
 ---
 

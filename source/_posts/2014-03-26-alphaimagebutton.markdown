@@ -19,15 +19,15 @@ public class AlphaImageButton extends ImageButton {
     private static final float ENABLED_ALPHA = 1.0f;
     private static final float DISABLED_ALPHA = 0.5f;
 
-    public ImageButtonPlus(Context context) {
+    public AlphaImageButton(Context context) {
         super(context);
     }
 
-    public ImageButtonPlus(Context context, AttributeSet attrs) {
+    public AlphaImageButton(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public ImageButtonPlus(Context context, AttributeSet attrs, int defStyle) {
+    public AlphaImageButton(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
@@ -38,3 +38,5 @@ public class AlphaImageButton extends ImageButton {
     }
 }
 ```
+
+https://gist.github.com/arriolac/9790179

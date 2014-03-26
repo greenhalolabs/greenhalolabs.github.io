@@ -4,7 +4,7 @@
   <title><![CDATA[Category: View | Fragments]]></title>
   <link href="http://fragments.greenhalolabs.io/blog/categories/view/atom.xml" rel="self"/>
   <link href="http://fragments.greenhalolabs.io/"/>
-  <updated>2014-03-26T11:20:12-07:00</updated>
+  <updated>2014-03-26T11:40:51-07:00</updated>
   <id>http://fragments.greenhalolabs.io/</id>
   <author>
     <name><![CDATA[Green Halo Labs]]></name>
@@ -30,15 +30,15 @@ import android.widget.ImageButton;</p>
 <pre><code>private static final float ENABLED_ALPHA = 1.0f;
 private static final float DISABLED_ALPHA = 0.5f;
 
-public ImageButtonPlus(Context context) {
+public AlphaImageButton(Context context) {
     super(context);
 }
 
-public ImageButtonPlus(Context context, AttributeSet attrs) {
+public AlphaImageButton(Context context, AttributeSet attrs) {
     super(context, attrs);
 }
 
-public ImageButtonPlus(Context context, AttributeSet attrs, int defStyle) {
+public AlphaImageButton(Context context, AttributeSet attrs, int defStyle) {
     super(context, attrs, defStyle);
 }
 
@@ -51,6 +51,8 @@ public void setEnabled(boolean enabled) {
 
 <p>}
 ```</p>
+
+<p><a href="https://gist.github.com/arriolac/9790179">https://gist.github.com/arriolac/9790179</a></p>
 ]]></content>
   </entry>
   

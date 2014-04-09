@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AlphaImageButton"
+title: "Code Snippet: AlphaImageButton"
 date: 2014-03-26 10:50:47 -0700
 comments: true
 categories: [Code Snippet, View]

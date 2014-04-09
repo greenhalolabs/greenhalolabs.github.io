@@ -90,7 +90,7 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name: greenhalolabs
+disqus_short_name: bitsgreenhalolabs
 disqus_show_comment_count: true
 
 # Google Analytics

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Code Snippet | Bits]]></title>
   <link href="http://bits.greenhalolabs.com/blog/categories/code-snippet/atom.xml" rel="self"/>
   <link href="http://bits.greenhalolabs.com/"/>
-  <updated>2014-04-09T15:43:00-07:00</updated>
+  <updated>2014-04-09T15:56:11-07:00</updated>
   <id>http://bits.greenhalolabs.com/</id>
   <author>
     <name><![CDATA[Green Halo Labs]]></name>
@@ -12,6 +12,59 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Code Snippet: TopCropImageView]]></title>
+    <link href="http://bits.greenhalolabs.com/blog/2014/04/09/code-snippet-topcropimageview/"/>
+    <updated>2014-04-09T15:50:35-07:00</updated>
+    <id>http://bits.greenhalolabs.com/blog/2014/04/09/code-snippet-topcropimageview</id>
+    <content type="html"><![CDATA[<p>A top-crop scaling <code>ImageView</code> subclass.</p>
+
+<p>```
+import android.content.Context;
+import android.graphics.Matrix;
+import android.widget.ImageView;</p>
+
+<p>/<em>*
+ * ImageView to display top-crop scale of an image view.
+ *
+ * @author Chris Arriola
+ </em>/
+public class TopCropImageView extends ImageView {</p>
+
+<pre><code>public TopCropImageView(Context context) {
+    super(context);
+    setScaleType(ScaleType.MATRIX);
+}
+
+@Override
+protected boolean setFrame(int l, int t, int r, int b) {
+    final Matrix matrix = getImageMatrix();
+
+    float scale;
+    final int viewWidth = getWidth() - getPaddingLeft() - getPaddingRight();
+    final int viewHeight = getHeight() - getPaddingTop() - getPaddingBottom();
+    final int drawableWidth = getDrawable().getIntrinsicWidth();
+    final int drawableHeight = getDrawable().getIntrinsicHeight();
+
+    if (drawableWidth * viewHeight &gt; drawableHeight * viewWidth) {
+        scale = (float) viewHeight / (float) drawableHeight;
+    } else {
+        scale = (float) viewWidth / (float) drawableWidth;
+    }
+
+    matrix.setScale(scale, scale);
+    setImageMatrix(matrix);
+
+    return super.setFrame(l, t, r, b);
+}        
+</code></pre>
+
+<p>}
+```
+<a href="https://gist.github.com/arriolac/3843346">https://gist.github.com/arriolac/3843346</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Code Snippet: AlphaImageButton]]></title>

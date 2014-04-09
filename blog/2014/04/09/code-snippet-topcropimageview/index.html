@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Code Snippet: AlphaImageButton - Bits</title>
+  <title>Code Snippet: TopCropImageView - Bits</title>
   <meta name="author" content="Green Halo Labs">
 
    
@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://bits.greenhalolabs.com/blog/2014/03/26/alphaimagebutton">
+  <link rel="canonical" href="http://bits.greenhalolabs.com/blog/2014/04/09/code-snippet-topcropimageview">
   <link href="/favicon.png" rel="icon">
   <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
@@ -80,7 +80,7 @@
 
   <header>
   <div class="jumbotron">
-    Code Snippet: AlphaImageButton
+    Code Snippet: TopCropImageView
 	<h5>
 
 
@@ -93,12 +93,12 @@
   
 
 
-<i class="icon-calendar-empty"></i> <time datetime="2014-03-26T10:50:47-07:00" pubdate data-updated="true">Mar 26<span>th</span>, 2014</time></h5>
+<i class="icon-calendar-empty"></i> <time datetime="2014-04-09T15:50:35-07:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time></h5>
   </div>
 </header>
   <div class="row-fluid">
     <div class="span12">
-      <p>Showing different view states (pressed, focused, disabled, etc.) can be a bit cumbersome and tedious when styling views. As a way to reduce the number of states to customize, we created a subclass of a View (an <code>ImageButton</code> in this case but can be any other View subclass) that sets the alpha value depending on the enabled state &ndash; 1.0 if enabled, 0.5 if disabled. This way, the View is translucent when disabled and a custom drawable/asset is not required.</p>
+      <p>A top-crop scaling <code>ImageView</code> subclass.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -127,36 +127,58 @@
 <span class='line-number'>25</span>
 <span class='line-number'>26</span>
 <span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>import android.content.Context;
-</span><span class='line'>import android.util.AttributeSet;
-</span><span class='line'>import android.widget.ImageButton;
-</span><span class='line'>
-</span><span class='line'>public class AlphaImageButton extends ImageButton {
-</span><span class='line'>
-</span><span class='line'>    private static final float ENABLED_ALPHA = 1.0f;
-</span><span class='line'>    private static final float DISABLED_ALPHA = 0.5f;
-</span><span class='line'>
-</span><span class='line'>    public AlphaImageButton(Context context) {
+</span><span class='line'>import android.graphics.Matrix;
+</span><span class='line'>import android.widget.ImageView;
+</span><span class='line'> 
+</span><span class='line'>/**
+</span><span class='line'> * ImageView to display top-crop scale of an image view.
+</span><span class='line'> *
+</span><span class='line'> * @author Chris Arriola
+</span><span class='line'> */
+</span><span class='line'>public class TopCropImageView extends ImageView {
+</span><span class='line'> 
+</span><span class='line'>    public TopCropImageView(Context context) {
 </span><span class='line'>        super(context);
+</span><span class='line'>        setScaleType(ScaleType.MATRIX);
 </span><span class='line'>    }
-</span><span class='line'>
-</span><span class='line'>    public AlphaImageButton(Context context, AttributeSet attrs) {
-</span><span class='line'>        super(context, attrs);
-</span><span class='line'>    }
-</span><span class='line'>
-</span><span class='line'>    public AlphaImageButton(Context context, AttributeSet attrs, int defStyle) {
-</span><span class='line'>        super(context, attrs, defStyle);
-</span><span class='line'>    }
-</span><span class='line'>
+</span><span class='line'> 
 </span><span class='line'>    @Override
-</span><span class='line'>    public void setEnabled(boolean enabled) {
-</span><span class='line'>        super.setEnabled(enabled);
-</span><span class='line'>        setAlpha((enabled ? ENABLED_ALPHA : DISABLED_ALPHA));
-</span><span class='line'>    }
+</span><span class='line'>    protected boolean setFrame(int l, int t, int r, int b) {
+</span><span class='line'>        final Matrix matrix = getImageMatrix();
+</span><span class='line'>            
+</span><span class='line'>        float scale;
+</span><span class='line'>        final int viewWidth = getWidth() - getPaddingLeft() - getPaddingRight();
+</span><span class='line'>        final int viewHeight = getHeight() - getPaddingTop() - getPaddingBottom();
+</span><span class='line'>        final int drawableWidth = getDrawable().getIntrinsicWidth();
+</span><span class='line'>        final int drawableHeight = getDrawable().getIntrinsicHeight();
+</span><span class='line'>        
+</span><span class='line'>        if (drawableWidth * viewHeight &gt; drawableHeight * viewWidth) {
+</span><span class='line'>            scale = (float) viewHeight / (float) drawableHeight;
+</span><span class='line'>        } else {
+</span><span class='line'>            scale = (float) viewWidth / (float) drawableWidth;
+</span><span class='line'>        }
+</span><span class='line'>            
+</span><span class='line'>        matrix.setScale(scale, scale);
+</span><span class='line'>        setImageMatrix(matrix);
+</span><span class='line'>            
+</span><span class='line'>        return super.setFrame(l, t, r, b);
+</span><span class='line'>    }        
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 
-<p><a href="https://gist.github.com/arriolac/9790179">https://gist.github.com/arriolac/9790179</a></p>
+<p><a href="https://gist.github.com/arriolac/3843346">https://gist.github.com/arriolac/3843346</a></p>
 
     </div>
   </div>
@@ -212,10 +234,8 @@
       <div class="span12">
         <p class="meta">
           
-            <a class="basic-alignment left" href="/blog/2014/03/18/autonexttextwatcher/" title="Previous Post: Code Snippet: AutoNextTextWatcher">&laquo; Code Snippet: AutoNextTextWatcher</a>
+            <a class="basic-alignment left" href="/blog/2014/03/26/alphaimagebutton/" title="Previous Post: Code Snippet: AlphaImageButton">&laquo; Code Snippet: AlphaImageButton</a>
           
-          
-            <a class="basic-alignment right" href="/blog/2014/04/09/code-snippet-topcropimageview/" title="Next Post: Code Snippet: TopCropImageView">Code Snippet: TopCropImageView &raquo;</a>
           
         </p>
       </div>
@@ -252,8 +272,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://bits.greenhalolabs.com/blog/2014/03/26/alphaimagebutton/';
-        var disqus_url = 'http://bits.greenhalolabs.com/blog/2014/03/26/alphaimagebutton/';
+        var disqus_identifier = 'http://bits.greenhalolabs.com/blog/2014/04/09/code-snippet-topcropimageview/';
+        var disqus_url = 'http://bits.greenhalolabs.com/blog/2014/04/09/code-snippet-topcropimageview/';
         var disqus_script = 'embed.js';
       
     (function () {

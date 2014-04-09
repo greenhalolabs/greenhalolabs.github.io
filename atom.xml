@@ -4,7 +4,7 @@
   <title><![CDATA[Fragments]]></title>
   <link href="http://fragments.greenhalolabs.io/atom.xml" rel="self"/>
   <link href="http://fragments.greenhalolabs.io/"/>
-  <updated>2014-03-27T14:28:15-07:00</updated>
+  <updated>2014-04-09T13:17:11-07:00</updated>
   <id>http://fragments.greenhalolabs.io/</id>
   <author>
     <name><![CDATA[Green Halo Labs]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[AlphaImageButton]]></title>
+    <title type="html"><![CDATA[Code Snippet: AlphaImageButton]]></title>
     <link href="http://fragments.greenhalolabs.io/blog/2014/03/26/alphaimagebutton/"/>
     <updated>2014-03-26T10:50:47-07:00</updated>
     <id>http://fragments.greenhalolabs.io/blog/2014/03/26/alphaimagebutton</id>

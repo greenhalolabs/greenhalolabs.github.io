@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://fragments.greenhalolabs.io/sitemap.xml 
+Sitemap: http://bits.greenhalolabs.com/sitemap.xml 

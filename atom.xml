@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Fragments]]></title>
-  <link href="http://fragments.greenhalolabs.io/atom.xml" rel="self"/>
-  <link href="http://fragments.greenhalolabs.io/"/>
-  <updated>2014-04-09T13:22:21-07:00</updated>
-  <id>http://fragments.greenhalolabs.io/</id>
+  <title><![CDATA[Bits]]></title>
+  <link href="http://bits.greenhalolabs.com/atom.xml" rel="self"/>
+  <link href="http://bits.greenhalolabs.com/"/>
+  <updated>2014-04-09T13:46:38-07:00</updated>
+  <id>http://bits.greenhalolabs.com/</id>
   <author>
     <name><![CDATA[Green Halo Labs]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Code Snippet: AlphaImageButton]]></title>
-    <link href="http://fragments.greenhalolabs.io/blog/2014/03/26/alphaimagebutton/"/>
+    <link href="http://bits.greenhalolabs.com/blog/2014/03/26/alphaimagebutton/"/>
     <updated>2014-03-26T10:50:47-07:00</updated>
-    <id>http://fragments.greenhalolabs.io/blog/2014/03/26/alphaimagebutton</id>
+    <id>http://bits.greenhalolabs.com/blog/2014/03/26/alphaimagebutton</id>
     <content type="html"><![CDATA[<p>Showing different view states (pressed, focused, disabled, etc.) can be a bit cumbersome and tedious when styling views. As a way to reduce the number of states to customize, we created a subclass of a View (an <code>ImageButton</code> in this case but can be any other View subclass) that sets the alpha value depending on the enabled state &ndash; 1.0 if enabled, 0.5 if disabled. This way, the View is translucent when disabled and a custom drawable/asset is not required.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -82,9 +82,9 @@
   
   <entry>
     <title type="html"><![CDATA[Code Snippet: AutoNextTextWatcher]]></title>
-    <link href="http://fragments.greenhalolabs.io/blog/2014/03/18/autonexttextwatcher/"/>
+    <link href="http://bits.greenhalolabs.com/blog/2014/03/18/autonexttextwatcher/"/>
     <updated>2014-03-18T23:01:05-07:00</updated>
-    <id>http://fragments.greenhalolabs.io/blog/2014/03/18/autonexttextwatcher</id>
+    <id>http://bits.greenhalolabs.com/blog/2014/03/18/autonexttextwatcher</id>
     <content type="html"><![CDATA[<p>A useful <code>TextWatcher</code> for auto-focusing to the next view once a certain character length has been reached on an <code>EditText</code>.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>

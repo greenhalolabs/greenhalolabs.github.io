@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: TextWatcher | Fragments]]></title>
-  <link href="http://fragments.greenhalolabs.io/blog/categories/textwatcher/atom.xml" rel="self"/>
-  <link href="http://fragments.greenhalolabs.io/"/>
-  <updated>2014-04-09T13:22:21-07:00</updated>
-  <id>http://fragments.greenhalolabs.io/</id>
+  <title><![CDATA[Category: TextWatcher | Bits]]></title>
+  <link href="http://bits.greenhalolabs.com/blog/categories/textwatcher/atom.xml" rel="self"/>
+  <link href="http://bits.greenhalolabs.com/"/>
+  <updated>2014-04-09T13:46:38-07:00</updated>
+  <id>http://bits.greenhalolabs.com/</id>
   <author>
     <name><![CDATA[Green Halo Labs]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Code Snippet: AutoNextTextWatcher]]></title>
-    <link href="http://fragments.greenhalolabs.io/blog/2014/03/18/autonexttextwatcher/"/>
+    <link href="http://bits.greenhalolabs.com/blog/2014/03/18/autonexttextwatcher/"/>
     <updated>2014-03-18T23:01:05-07:00</updated>
-    <id>http://fragments.greenhalolabs.io/blog/2014/03/18/autonexttextwatcher</id>
+    <id>http://bits.greenhalolabs.com/blog/2014/03/18/autonexttextwatcher</id>
     <content type="html"><![CDATA[<p>A useful <code>TextWatcher</code> for auto-focusing to the next view once a certain character length has been reached on an <code>EditText</code>.</p>
 
 <p>```

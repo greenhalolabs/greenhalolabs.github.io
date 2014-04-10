@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Tip | Bits]]></title>
   <link href="http://bits.greenhalolabs.com/blog/categories/tip/atom.xml" rel="self"/>
   <link href="http://bits.greenhalolabs.com/"/>
-  <updated>2014-04-09T17:50:22-07:00</updated>
+  <updated>2014-04-09T17:58:30-07:00</updated>
   <id>http://bits.greenhalolabs.com/</id>
   <author>
     <name><![CDATA[Green Halo Labs]]></name>
@@ -18,7 +18,7 @@
     <link href="http://bits.greenhalolabs.com/blog/2014/04/09/tip-use-static-factory-methods/"/>
     <updated>2014-04-09T17:33:29-07:00</updated>
     <id>http://bits.greenhalolabs.com/blog/2014/04/09/tip-use-static-factory-methods</id>
-    <content type="html"><![CDATA[<p>Static factory methods are a creational design pattern. It&rsquo;s a way to construct an instance of an object by calling a static method of the class. A good example of this is when constructing a new Fragment:</p>
+    <content type="html"><![CDATA[<p>Static factory methods are a creational design pattern. They are a good way to construct an instance of an object by calling a static method of the class. A good example of this is when constructing a new Fragment:</p>
 
 <p>```
 public static SomeFragment newInstance(int id) {</p>

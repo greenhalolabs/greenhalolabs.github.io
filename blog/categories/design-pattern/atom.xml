@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Design Pattern | Bits]]></title>
+  <link href="http://bits.greenhalolabs.com/blog/categories/design-pattern/atom.xml" rel="self"/>
+  <link href="http://bits.greenhalolabs.com/"/>
+  <updated>2014-04-09T17:50:22-07:00</updated>
+  <id>http://bits.greenhalolabs.com/</id>
+  <author>
+    <name><![CDATA[Green Halo Labs]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Tip: Static Factory Methods]]></title>
+    <link href="http://bits.greenhalolabs.com/blog/2014/04/09/tip-use-static-factory-methods/"/>
+    <updated>2014-04-09T17:33:29-07:00</updated>
+    <id>http://bits.greenhalolabs.com/blog/2014/04/09/tip-use-static-factory-methods</id>
+    <content type="html"><![CDATA[<p>Static factory methods are a creational design pattern. It&rsquo;s a way to construct an instance of an object by calling a static method of the class. A good example of this is when constructing a new Fragment:</p>
+
+<p>```
+public static SomeFragment newInstance(int id) {</p>
+
+<pre><code>final SomeFragment f = new SomeFragment();
+
+final Bundle args = new Bundle();
+args.putInt("key_id", id);
+f.setArguments(args);
+
+return f;
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+
+<p>Some benefits of using this design pattern are:</p>
+
+<ul>
+<li>The caller doesn&rsquo;t have to write all this boilerplate code. It can simple call <code>SomeFragment.newInstance(...)</code> to construct a new <code>SomeFragment</code> instance.</li>
+<li>Decouples the Bundle String key <strong>key_id</strong> from the caller. This way, only <code>SomeFragment</code> needs to &ldquo;know&rdquo; the key for <strong>id</strong> and the callers do not.</li>
+</ul>
+
+
+<p>Another example of this is when launching a new Activity:</p>
+
+<p>```
+public class SomeActivity extends Activity {</p>
+
+<pre><code>public static void launch(Activity callerActivity, int id) {
+    final Intent intent = new Intent(callerActivity, SomeActivity.class);
+    intent.putExtra("key_id", id);
+    callerActivity.startActivity(intent);
+}
+</code></pre>
+
+<p>}
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

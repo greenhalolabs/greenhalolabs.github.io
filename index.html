@@ -109,6 +109,107 @@
   
 
 
+<i class="icon-calendar-empty"></i> <time datetime="2014-04-09T17:33:29-07:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time></h5>
+          <div class="row-fluid">
+          
+          <a href="http://bits.greenhalolabs.com/blog/2014/04/09/tip-use-static-factory-methods/#disqus_thread">Comments </a> <span class="fui-bubble-16"></span>
+          
+          </div>
+          
+          <div class="row-fluid">
+          
+          <a href="/blog/categories/design-pattern/"><span class="badge">Design Pattern</span></a>
+          
+          <a href="/blog/categories/tip/"><span class="badge">Tip</span></a>
+          
+          </div>
+          
+    </div>
+    <div class="span10 post-container">
+      <h1 class="link"><a href="/blog/2014/04/09/tip-use-static-factory-methods/">Tip: Static Factory Methods</a></h1>
+      <p>Static factory methods are a creational design pattern. It&rsquo;s a way to construct an instance of an object by calling a static method of the class. A good example of this is when constructing a new Fragment:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>public static SomeFragment newInstance(int id) {
+</span><span class='line'>
+</span><span class='line'>  final SomeFragment f = new SomeFragment();
+</span><span class='line'>  
+</span><span class='line'>  final Bundle args = new Bundle();
+</span><span class='line'>  args.putInt("key_id", id);
+</span><span class='line'>  f.setArguments(args);
+</span><span class='line'>
+</span><span class='line'>  return f;
+</span><span class='line'>}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Some benefits of using this design pattern are:</p>
+
+<ul>
+<li>The caller doesn&rsquo;t have to write all this boilerplate code. It can simple call <code>SomeFragment.newInstance(...)</code> to construct a new <code>SomeFragment</code> instance.</li>
+<li>Decouples the Bundle String key <strong>key_id</strong> from the caller. This way, only <code>SomeFragment</code> needs to &ldquo;know&rdquo; the key for <strong>id</strong> and the callers do not.</li>
+</ul>
+
+
+<p>Another example of this is when launching a new Activity:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>public class SomeActivity extends Activity {
+</span><span class='line'>
+</span><span class='line'>  public static void launch(Activity callerActivity, int id) {
+</span><span class='line'>      final Intent intent = new Intent(callerActivity, SomeActivity.class);
+</span><span class='line'>      intent.putExtra("key_id", id);
+</span><span class='line'>      callerActivity.startActivity(intent);
+</span><span class='line'>  }
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+      
+      
+    </div>
+  </div>
+
+
+
+    </article>
+    
+    <hr>
+    
+  
+  
+    <article>
+      
+
+  <div class="row-fluid">
+    <div class="span2 post-meta">
+	  <h5 class="date-time">
+
+
+
+
+
+
+
+
+  
+
+
 <i class="icon-calendar-empty"></i> <time datetime="2014-04-09T15:50:35-07:00" pubdate data-updated="true">Apr 9<span>th</span>, 2014</time></h5>
           <div class="row-fluid">
           

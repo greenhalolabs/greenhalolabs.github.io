@@ -7,7 +7,7 @@ categories: [Tip, Design Pattern]
 author: Chris Arriola
 ---
 
-Static factory methods are a creational design pattern. It's a way to construct an instance of an object by calling a static method of the class. A good example of this is when constructing a new Fragment:
+Static factory methods are a creational design pattern. They are a good way to construct an instance of an object by calling a static method of the class. A good example of this is when constructing a new Fragment:
 
 ```
 public static SomeFragment newInstance(int id) {

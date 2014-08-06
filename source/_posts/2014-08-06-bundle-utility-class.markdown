@@ -7,7 +7,9 @@ categories: [Utility Class, Bundle]
 author: Chris Arriola
 ---
 
-Tired of having to define `Bundle` keys for `Parcelable`s when instantiating an `Activity`/`Fragment`? Use this (view the gist to see a usage example).
+A utility class for serializing/deserializing Parcelables into/from a Bundle.
+
+Check it out: https://gist.github.com/arriolac/a66515bad322db0ce747
 
 ```
 import android.os.Bundle;
@@ -68,5 +70,3 @@ public class BundleUtil {
  
 }
 ```
-
-https://gist.github.com/arriolac/a66515bad322db0ce747

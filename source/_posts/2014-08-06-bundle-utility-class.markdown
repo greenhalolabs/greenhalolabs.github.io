@@ -9,7 +9,7 @@ author: Chris Arriola
 
 A utility class for serializing/deserializing Parcelables into/from a Bundle.
 
-Check it out: https://gist.github.com/arriolac/a66515bad322db0ce747
+Check this out for an example: https://gist.github.com/arriolac/a66515bad322db0ce747
 
 ```
 import android.os.Bundle;

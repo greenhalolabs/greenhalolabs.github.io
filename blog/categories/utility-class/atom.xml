@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Utility Class | Bits]]></title>
   <link href="http://bits.greenhalolabs.com/blog/categories/utility-class/atom.xml" rel="self"/>
   <link href="http://bits.greenhalolabs.com/"/>
-  <updated>2014-08-06T15:41:00-07:00</updated>
+  <updated>2014-08-06T15:43:34-07:00</updated>
   <id>http://bits.greenhalolabs.com/</id>
   <author>
     <name><![CDATA[Green Halo Labs]]></name>
@@ -20,7 +20,7 @@
     <id>http://bits.greenhalolabs.com/blog/2014/08/06/bundle-utility-class</id>
     <content type="html"><![CDATA[<p>A utility class for serializing/deserializing Parcelables into/from a Bundle.</p>
 
-<p>Check it out: <a href="https://gist.github.com/arriolac/a66515bad322db0ce747">https://gist.github.com/arriolac/a66515bad322db0ce747</a></p>
+<p>Check this out for an example: <a href="https://gist.github.com/arriolac/a66515bad322db0ce747">https://gist.github.com/arriolac/a66515bad322db0ce747</a></p>
 
 <p>```
 import android.os.Bundle;

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Utility: BundleUtil"
+title: "Code Snippet: BundleUtil"
 date: 2014-08-06 15:22:04 -0700
 comments: true
-categories: [Utility Class, Bundle]
+categories: [Code Snippet, Bundle]
 author: Chris Arriola
 ---
 

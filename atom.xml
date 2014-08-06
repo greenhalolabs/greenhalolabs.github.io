@@ -4,7 +4,7 @@
   <title><![CDATA[Bits]]></title>
   <link href="http://bits.greenhalolabs.com/atom.xml" rel="self"/>
   <link href="http://bits.greenhalolabs.com/"/>
-  <updated>2014-04-09T17:58:30-07:00</updated>
+  <updated>2014-08-06T15:41:00-07:00</updated>
   <id>http://bits.greenhalolabs.com/</id>
   <author>
     <name><![CDATA[Green Halo Labs]]></name>
@@ -12,6 +12,133 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Utility: BundleUtil]]></title>
+    <link href="http://bits.greenhalolabs.com/blog/2014/08/06/bundle-utility-class/"/>
+    <updated>2014-08-06T15:22:04-07:00</updated>
+    <id>http://bits.greenhalolabs.com/blog/2014/08/06/bundle-utility-class</id>
+    <content type="html"><![CDATA[<p>A utility class for serializing/deserializing Parcelables into/from a Bundle.</p>
+
+<p>Check it out: <a href="https://gist.github.com/arriolac/a66515bad322db0ce747">https://gist.github.com/arriolac/a66515bad322db0ce747</a></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>import android.os.Bundle;
+</span><span class='line'>import android.os.Parcelable;
+</span><span class='line'> 
+</span><span class='line'>/**
+</span><span class='line'> * Utility class for {@link android.os.Bundle}.
+</span><span class='line'> * Created by chris on 8/6/14.
+</span><span class='line'> */
+</span><span class='line'>public class BundleUtil {
+</span><span class='line'> 
+</span><span class='line'>    private static final String EXTRA_PARCELABLE_COUNT = "parcelable_count";
+</span><span class='line'> 
+</span><span class='line'>    /**
+</span><span class='line'>     * Creates a {@link Bundle} given a list of {@link android.os.Parcelable} objects. This is a
+</span><span class='line'>     * convenience method if all the values in the Bundle are Parcelables.
+</span><span class='line'>     *
+</span><span class='line'>     * @param args the {@link android.os.Parcelable} objects.
+</span><span class='line'>     * @return the resulting {@link Bundle}.
+</span><span class='line'>     */
+</span><span class='line'>    public static Bundle createBundle(Parcelable... args) {
+</span><span class='line'>        final Bundle bundle = new Bundle();
+</span><span class='line'> 
+</span><span class='line'>        // Put Parcelable in bundle
+</span><span class='line'>        final int size = args.length;
+</span><span class='line'>        for (int i = 0; i &lt; size; i++) {
+</span><span class='line'>            bundle.putParcelable(String.valueOf(i), args[i]);
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        // Put size in bundle (needed when using
+</span><span class='line'>        bundle.putInt(EXTRA_PARCELABLE_COUNT, size);
+</span><span class='line'> 
+</span><span class='line'>        return bundle;
+</span><span class='line'>    }
+</span><span class='line'> 
+</span><span class='line'>    /**
+</span><span class='line'>     * NOTE: This method is used in conjunction with {@link #createBundle(android.os.Parcelable...)}.
+</span><span class='line'>     *
+</span><span class='line'>     * Returns an array of Parcelable objects contained within &lt;code&gt;bundle&lt;/code&gt;. The returned
+</span><span class='line'>     * array is returned in the same order they are passed in {@link #createBundle(android.os.Parcelable...)}.
+</span><span class='line'>     *
+</span><span class='line'>     * @param bundle the bundle
+</span><span class='line'>     * @return an array of Parcelables contained in &lt;code&gt;bundle&lt;/code&gt;.
+</span><span class='line'>     */
+</span><span class='line'>    public static Parcelable[] getParcelablesFromBundle(Bundle bundle) {
+</span><span class='line'> 
+</span><span class='line'>        // Count how many Parcelable values in the bundle
+</span><span class='line'>        final int numOfParcelables = bundle.getInt(EXTRA_PARCELABLE_COUNT);
+</span><span class='line'> 
+</span><span class='line'>        // Get list of Parcelables
+</span><span class='line'>        final Parcelable[] parcelables = new Parcelable[numOfParcelables];
+</span><span class='line'>        for (int i = 0; i &lt; numOfParcelables; i++) {
+</span><span class='line'>            parcelables[i] = bundle.getParcelable(String.valueOf(i));
+</span><span class='line'>        }
+</span><span class='line'> 
+</span><span class='line'>        return parcelables;
+</span><span class='line'>    }
+</span><span class='line'> 
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Tip: Static Factory Methods]]></title>
